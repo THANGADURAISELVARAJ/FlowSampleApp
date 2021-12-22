@@ -3,7 +3,7 @@ object Versions {
      * Root Level
      * */
     const val VERSION_BUILD_TOOL = "7.0.4"
-    const val VERSION_KOTLIN = "1.5.20"
+    const val VERSION_KOTLIN = "1.5.10"
 
     /**
      * Testing Dependencies
