@@ -1,6 +1,7 @@
 package com.alvin.flowsample.extentions
 
 import androidx.lifecycle.*
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
@@ -13,6 +14,14 @@ fun <T> LifecycleOwner.lifeCycleLaunchWithFlow(value: Flow<T>, callBack: (T) -> 
             value.collectLatest {
                 callBack(it)
             }
+        }
+    }
+}
+
+fun LifecycleOwner.lifeCycleLaunch(callBack: suspend (CoroutineScope) -> Unit) {
+    lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.STARTED) {
+            callBack(this)
         }
     }
 }

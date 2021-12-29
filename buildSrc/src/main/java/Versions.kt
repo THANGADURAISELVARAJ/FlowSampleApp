@@ -37,4 +37,34 @@ object Versions {
     const val VERSION_ACTIVITY_KTX = "1.4.0"
     const val VERSION_FRAGMENT_KTX = "1.4.0"
 
+    /**
+     * Image Loading
+     * */
+    const val VERSION_COIL = "1.4.0"
+
+    /**
+     * Work Manager
+     * */
+    const val VERSION_WORK_MANAGER = "2.7.1"
+
+    /**
+     * Room Db
+     * */
+    const val VERSION_ROOM = "2.2.5"
+
+    /**
+     * Retrofit
+     * */
+    const val VERSION_RETROFIT = "2.9.0"
+
+    /**
+     * Okhttp 3
+     * */
+    const val VERSION_OK_HTTP = "4.9.3"
+
+    /**
+     * Data store
+     * */
+    const val VERSION_DATA_STORE = "1.0.0"
+
 }

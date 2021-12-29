@@ -3,6 +3,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("kapt")
+    id("kotlin-android")
 }
 
 android {
@@ -49,16 +50,17 @@ android {
 }
 
 dependencies {
-    /**
-     * Testing Dependencies
-     * */
-    testImplementation(TestDeps.LIST_OF_TEST_LIBRARIES)
-    androidTestImplementation(TestDeps.LIST_OF_ANDROID_TEST_LIBRARIES)
 
     /**
      * Core Dependencies
      * */
     implementation(LibraryDeps.LIST_OF_ANDROID_CORE_LIBRARIES)
+
+    /**
+     * Testing Dependencies
+     * */
+    testImplementation(TestDeps.LIST_OF_TEST_LIBRARIES)
+    androidTestImplementation(TestDeps.LIST_OF_ANDROID_TEST_LIBRARIES)
 
     /**
      * Hilt Dependencies
@@ -72,11 +74,41 @@ dependencies {
     implementation(LifeCycleDeps.LIFE_CYCLE_VIEW_MODEL)
     implementation(LifeCycleDeps.LIFE_CYCLE_LIVE_DATA)
     implementation(LifeCycleDeps.LIFE_CYCLE_RUN_TIME)
-    implementation (LifeCycleDeps.LIFE_CYCLE_EXTENSIONS)
+    implementation(LifeCycleDeps.LIFE_CYCLE_EXTENSIONS)
 
     /**
      * KTX Dependencies
      * */
-    implementation (KTXDeps.ACTIVITY_KTX)
-    implementation (KTXDeps.FRAGMENT_KTX)
+    implementation(KTXDeps.ACTIVITY_KTX)
+    implementation(KTXDeps.FRAGMENT_KTX)
+
+    /**
+     * Image Loading
+     * */
+    implementation(CoilDeps.COIL)
+
+    /**
+     * Work Manager
+     * */
+    implementation(WorkManagerDeps.WORK_MANAGER)
+
+    /**
+     * Room
+     * */
+    implementation(RoomDeps.ROOM)
+    kapt(RoomDeps.ROOM_COMPILER)
+    implementation(RoomDeps.ROOM_KTX)
+
+    /**
+     * Retrofit
+     * */
+    implementation(RetrofitDeps.RETROFIT)
+    implementation(RetrofitDeps.RETROFIT_GSON_CONVERTER)
+    implementation(RetrofitDeps.OKHTTP_LOGGING_INTERCEPTOR)
+
+    /**
+     * Data store
+     * */
+    implementation(DataStoreDeps.DATA_STORE)
+
 }
